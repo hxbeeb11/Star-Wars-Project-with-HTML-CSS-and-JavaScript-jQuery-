@@ -1,0 +1,91 @@
+body{
+    background: rgb(9,9,121);
+    background: linear-gradient(81deg, rgba(9,9,121,1) 0%, rgba(2,0,36,1) 0%);
+}
+
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+}
+
+
+#name{
+    color: white;
+    font-size: 30px;
+    width: max-content;
+    position: relative;
+}
+
+#name::after{
+    content: '';
+    position: absolute;
+    bottom:0%;
+    left:0%;
+    height:0;
+    width:0;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    transition: 100ms ease-in-out;
+    z-index: -1;
+}
+
+#name:hover::after{
+    height: 3px;
+    width: 100%;
+}
+
+#picture{
+    height:500px; width: 400px;
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+}
+
+#picture::after, #picture::before{
+    content:'';
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 7px;
+    background-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    z-index: -1;
+    padding: 7px;
+}
+
+#picture::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+button{
+    background-color:  rgb(6, 6, 83);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+button::after{
+    content: '';
+    height: 0%;
+    width:0%;
+    position: absolute;
+    background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    transition: 500ms;
+}
+
+button:hover::after{
+    height: 100%;
+    width: 100%;
+}
+
+button:hover{
+    color:rgb(6, 6, 83);
+}

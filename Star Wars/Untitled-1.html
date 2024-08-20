@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star-Wars</title>
+    <link rel="stylesheet" href="StarWars.css">
+</head>
+<body>
+    <center><h1>Star Wars Project with HTML/CSS and JavaScript (jQuery)</h1></center>
+
+             <br>
+
+             <center><div id="name">
+                Name 
+             </div></center>
+
+             <br>
+             <br>
+
+             <div id="picture"></div>
+
+             <br>
+             <br>
+
+             <center><button>Next charecter</button></center>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('button').on('click',function(){
+                let randomNum = Math.ceil(Math.random()*88)
+                $.get(`https://akabab.github.io/starwars-api/api/id/${randomNum}.json`,function(data){
+                $('#name').text(data['name'])
+                $('#picture').html(` <img src="${data['image']}" height="500" width="400"> `)
+            })
+            })    
+        })
+    </script>
+    
+</body>
+</html>
